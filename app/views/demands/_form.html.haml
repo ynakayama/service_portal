@@ -1,0 +1,134 @@
+= form_for @demand do |f|
+  -if @demand.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@demand.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @demand.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+
+    .service_type
+      .row
+        .span12
+          .input
+            = f.hidden_field :service_type
+
+    .general
+      .row
+        .span8.offset2
+          %div{:id => "ac_form", :style => "clear:both;width:600px;margin:5px"}
+            .personal
+              %h3
+                %a{:href => "#"} 送信者情報
+              .clearfix
+                %label 名前
+                .input
+                  = f.text_field :name
+                  .help-inline
+                    例: DTS 太郎
+
+                %label メールアドレス
+                .input
+                  = f.text_field :email
+                  .help-inline
+                    例: example@dts.co.jp
+
+                %label 社員番号
+                .input
+                  = f.text_field :badge
+                  .help-inline
+                    例: 123456
+
+                %label 連絡先
+                .input
+                  = f.text_field :contacts
+                  .help-inline
+                    例: 03-1111-2222
+
+            .boss
+              %h3
+                %a{:href => "#"} 上長の情報
+              .clearfix
+                %label 名前
+                .input
+                  = f.text_field :name_b
+                  .help-inline
+                    例: DTS 太郎
+
+                %label メールアドレス
+                .input
+                  = f.text_field :email_b
+                  .help-inline
+                    例: example@dts.co.jp
+
+                %label 社員番号
+                .input
+                  = f.text_field :badge_b
+                  .help-inline
+                    例: 123456
+
+            .project
+              %h3
+                %a{:href => "#"} プロジェクト情報
+              .clearfix
+                %label 顧客名
+                .input
+                  = f.text_field :customer_name
+                  .help-inline
+                    例: ○●銀行
+
+                %label プロジェクト名
+                .input
+                  = f.text_field :project_name
+                  .help-inline
+                    例: △▲システム□■案件
+
+                %label 利用元 IP アドレス
+                .input
+                  = f.text_field :ip, :class => "xlarge"
+                  .help-inline
+                    例: 172.16.100.0/24
+
+            .range
+              %h3
+                %a{:href => "#"} 利用期間
+              .clearfix
+                %label 利用開始日付
+                .input
+                  = f.text_field :start_date
+                  .help-inline
+                    例: 2012/01/01
+
+                %label 利用終了日付
+                .input
+                  = f.text_field :end_date
+                  .help-inline
+                    例: 2012/12/31
+
+            .others
+              %h3
+                %a{:href => "#"} 連絡事項
+              .clearfix
+                %label 利用目的
+                .input
+                  = f.text_area :purpose, :class => "xlarge", :cols => "50", :rows => "2"
+                  .help-inline
+                    例: ミドルウェア○○のHAクラスタ構成検証のため
+
+                %label 備考/連絡事項
+                .input
+                  = f.text_area :message, :class => "xlarge", :cols => "50", :rows => "2"
+                  .help-inline
+                    備考などを記入
+
+            = render 'options'
+            = render 'support'
+
+    .row
+      .span8.offset2
+        .clearfix
+          .form-actions
+            .input
+              = f.submit '送信する', :class => 'btn btn-primary', :confirm => "よろしいですか？"
+

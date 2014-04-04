@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  demand_id: 1
+  title: MyString
+  contact_at_stock: MyString
+  date_should_contact: MyString
+
+two:
+  demand_id: 2
+  title: MyString
+  contact_at_stock: MyString
+  date_should_contact: MyString

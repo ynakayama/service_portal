@@ -1,0 +1,116 @@
+= form_for @answer do |f|
+  -if @answer.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@answer.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @answer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+    .question
+      .row
+        .span12
+          .input
+            = f.hidden_field :question_id, :value => @question.id
+
+    .personal
+      .row
+        .span3
+          %h4
+            送信者情報
+        .span9
+          %div{:id => "ac_form", :style => "clear:both;width:600px;margin:5px"}
+            %h3
+              %a{:href => "#"} 送信者情報
+            .clearfix
+              %label 社員番号
+              .input
+                = f.text_field :badge
+                .help-inline
+                  例: 123456
+
+              %label メールアドレス
+              .input
+                = f.text_field :email
+                .help-inline
+                  例: example@dts.co.jp
+
+              %label 名前
+              .input
+                = f.text_field :name
+                .help-inline
+                  例: DTS 太郎
+
+              %label 連絡先
+              .input
+                = f.text_field :contacts
+                .help-inline
+                  例: 03-1111-2222
+
+    .answer
+      .row
+        .span3
+          %h4
+            アンケート回答
+        .span9
+          %div{:id => "ac_form_answer", :style => "clear:both;width:600px;margin:5px"}
+            %h3
+              %a{:href => "#"} アンケート回答
+            .clearfix
+              - unless @question.question_1.strip.empty?
+                %label
+                  = @question.question_1
+                .input
+                  = f.text_area :answer_1, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_2.strip.empty?
+                %label
+                  = @question.question_2
+                .input
+                  = f.text_area :answer_2, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_3.strip.empty?
+                %label
+                  = @question.question_3
+                .input
+                  = f.text_area :answer_3, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_4.strip.empty?
+                %label
+                  = @question.question_4
+                .input
+                  = f.text_area :answer_4, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_5.strip.empty?
+                %label
+                  = @question.question_5
+                .input
+                  = f.text_area :answer_5, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_6.strip.empty?
+                %label
+                  = @question.question_6
+                .input
+                  = f.text_area :answer_6, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_7.strip.empty?
+                %label
+                  = @question.question_7
+                .input
+                  = f.text_area :answer_7, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_8.strip.empty?
+                %label
+                  = @question.question_8
+                .input
+                  = f.text_area :answer_8, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_9.strip.empty?
+                %label
+                  = @question.question_9
+                .input
+                  = f.text_area :answer_9, :class => "xlarge", :cols => "50", :rows => "2"
+              - unless @question.question_10.strip.empty?
+                %label
+                  = @question.question_10
+                .input
+                  = f.text_area :answer_10, :class => "xlarge", :cols => "50", :rows => "2"
+
+    .row
+      .span12
+        .clearfix
+          .form-actions
+            .input
+              = f.submit '回答する', :class => 'btn btn-primary', :confirm => "よろしいですか？"

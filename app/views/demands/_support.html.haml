@@ -1,0 +1,27 @@
+.support
+  %h3
+    %a{:href => "#"} サポートメニュー
+  .clearfix
+    %label タイトル
+    .input
+      <select id="enquiries_title" name="enquiries[title]">
+      %option
+        選択してください
+        - @supports.collect do |support|
+          - menu_name = ''
+          - if support.service_type == 'support_vm'
+            - menu_name = '仮想サーバーレンタル'
+          - if support.service_type == 'support_svn'
+            - menu_name = 'SVN ホスティング'
+          %option
+            - detail = menu_name + ' - ' + support.course + ' - ' + support.text
+            = detail
+        </select>
+        .help-inline
+          サポートメニューを選択してください
+      %label 連絡事項
+      .input
+        <textarea class="xlarge" id="enquiries_detail" name="enquiries[detail]"></textarea>
+        .help-inline
+          詳細情報、備考などを記入
+

@@ -1,0 +1,18 @@
+- title 'アンケートに回答する - イノベーション推進部サービスポータル'
+
+.answers-new-page
+  .page-header
+    .title_answer
+      %h1
+        - unless @question.nil?
+          = @question.title
+
+  .row
+    .span12
+      - unless @answer.nil? or @question.nil?
+        - if @question.finish
+          = render 'finish'
+        - else
+          = render 'form'
+
+#result

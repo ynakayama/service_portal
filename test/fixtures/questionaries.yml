@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  demand_id: 1
+  question_id: 1
+  question_1: ああああああ
+  question_2: ああああああ
+  question_3: ああああああ
+  question_4: ああああああ
+  question_5: ああああああ
+  question_6: ああああああ
+  question_7: ああああああ
+  question_8: ああああああ
+  question_9: ああああああ
+  question_10: ああああああ
+k
+
+two:
+  name: 

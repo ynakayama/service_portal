@@ -1,0 +1,43 @@
+= form_for @support do |f|
+  -if @support.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@support.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @support.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+    .page-header
+      %h2 サポートメニュー管理 - 作成 / 編集画面
+    .support_type
+      .row
+        .span3
+          %b
+            サポートメニュー ID:
+            - if @support.id
+              = @support.id
+            - else
+              未定
+        .span9
+          %div{:id => "ac_form", :style => "clear:both;width:600px;margin:5px"}
+            %h3
+              %a{:href => "#"} 詳細情報
+            .clearfix
+              %label サポートメニュー名称
+              .input
+                = f.text_field :course
+                .help-inline
+                  例: エクスポート
+              %label 説明文
+              .input
+                = f.text_field :text
+                .help-inline
+                  例: 仮想サーバーをエクスポートします
+              %label サービスタイプ
+              .input
+                = f.text_field :service_type
+                .help-inline
+                  例: support_vm または support_svn
+          .form-actions
+            = link_to '戻る', supports_path, :class => 'btn btn-small'
+            = f.submit '保存する', :class => 'btn btn-small btn-primary'

@@ -1,0 +1,28 @@
+- title 'トップページ - イノベーション推進部サービスポータル'
+
+.title
+  .container
+    .page-header
+      %h1 イノベーション推進部サービスポータル
+      %br
+      %p イノベーション推進部では、事業部の皆様に円滑なプロジェクト遂行を支援するサービスを無償で提供しております。是非、ご利用ください。
+
+.service-index
+  .container
+    .content
+      .row
+        .span10.offset1
+          %div{:id => "ac_tab", :style => "clear:both;margin:5px"}
+            %ul
+              %li
+                = link_to 'サービスメニュー', '#tab1'
+              %li
+                = link_to 'アフターサポートメニュー', '#tab2'
+              %li
+                = link_to 'お問い合わせ', '#tab3'
+            %div{:id => "tab1"}
+              = render :template => 'portal/_menu'
+            %div{:id => "tab2"}
+              = render :template => 'portal/_support'
+            %div{:id => "tab3"}
+              = render :template => 'portal/_contact'

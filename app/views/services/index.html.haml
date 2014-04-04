@@ -1,0 +1,69 @@
+- title 'サービス管理 - 技術SE部サービスポータル'
+
+.page-header
+  %h2 サービス管理 - 申し込み一覧画面
+
+.service-index
+  .container
+    .content
+      .row
+        .span3
+          %h3 絞り込み
+          %ul{:class => 'breadcrumb'}
+            - if Rails.env.production?
+              %li
+                %a{:href => "/portal/services?processed=false" } 未済のみ
+              %li
+                %a{:href => "/portal/services" } すべて表示
+            - else
+              %li
+                %a{:href => "/services?processed=false" } 未済のみ
+              %li
+                %a{:href => "/services" } すべて表示
+
+          %h3 マスター管理
+          - if Rails.env.production?
+            %a{:class => "btn btn-small btn", :href => "/portal/machines" } 仮想サーバー
+            %a{:class => "btn btn-small btn", :href => "/portal/supports" } サポートメニュー
+          - else
+            %a{:class => "btn btn-small btn", :href => "/machines" } 仮想サーバー
+            %a{:class => "btn btn-small btn", :href => "/supports" } サポートメニュー
+
+        .span9
+          %h2 申し込み一覧
+          %table{:class => 'table table-bordered table-striped'}
+            %thead
+              %tr
+                %th
+                  ID
+                %th
+                  メールアドレス
+                %th
+                  送信者
+                %th
+                  送信日
+                %th
+                  サービスタイプ
+                %th
+                  処理
+                %th
+                  詳細
+            %tbody
+              - @demands.each do |demand|
+                %tr
+                  %td
+                    = link_to demand.id, edit_service_path(demand)
+                  %td
+                    = demand.email
+                  %td
+                    = demand.name
+                  %td
+                    = demand.created_at.strftime "%Y/%m/%d"
+                  %td
+                    = demand.service_type
+                  %td
+                    = demand.processed ? '処理済み' : '未済'
+                  %td
+                    = link_to '詳細', edit_service_path(demand)
+
+          = paginate @demands, :window => 4, :outer_window => 0

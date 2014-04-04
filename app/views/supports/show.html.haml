@@ -1,0 +1,18 @@
+- title 'サポートメニュー管理 - イノベーション推進部サービスポータル'
+
+%section
+  .container
+    .page-header
+      %h2 サポートメニュー管理 - 詳細画面
+    .row
+      .span3
+        %b
+          サポートメニュー ID:
+          = @support.id
+
+      .span9
+        = render 'detail'
+        .form-actions
+          %div
+            = link_to '戻る', supports_path, :class => 'btn btn-small'
+            = link_to '編集', edit_support_path(@support), :class => 'btn btn-small btn-primary'

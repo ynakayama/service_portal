@@ -1,0 +1,13 @@
+
+one:
+  id: 1
+  demand_id: 1
+  title: "お問い合わせ"
+  detail: "ほげほげ"
+
+two:
+  id: 2
+  demand_id: 2
+  title: "お問い合わせ"
+  detail: "ほげほげ"
+

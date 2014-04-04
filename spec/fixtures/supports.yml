@@ -1,0 +1,25 @@
+
+one:
+  id: 1
+  course: aaa
+  text: bbb
+  service_type: ccc
+
+two:
+  id: 2
+  course: ddd
+  text: eee
+  service_type: fff
+
+three:
+  id: 3
+  course: ggg
+  text: hhh
+  service_type: iii
+
+four:
+  id: 4
+  course: jjj
+  text: kkk
+  service_type: lll
+

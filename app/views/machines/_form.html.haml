@@ -1,0 +1,33 @@
+= form_for @machine do |f|
+  -if @machine.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@machine.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @machine.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+    .page-header
+      %h2 仮想サーバー管理 - 作成 / 編集画面
+    .machine_type
+      .row
+        .span3
+          %b
+            仮想サーバー ID:
+            - if @machine.id
+              = @machine.id
+            - else
+              未定
+        .span9
+          %div{:id => "ac_form", :style => "clear:both;width:600px;margin:5px"}
+            %h3
+              %a{:href => "#"} 詳細情報
+            .clearfix
+              %label マシン名称
+              .input
+                = f.text_field :vm_type
+                .help-inline
+                  例: Red Hat Enterprise Linux 6
+          .form-actions
+            = link_to '戻る', machines_path, :class => 'btn btn-small'
+            = f.submit '保存する', :class => 'btn btn-small btn-primary'

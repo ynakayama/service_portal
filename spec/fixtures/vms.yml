@@ -1,0 +1,27 @@
+
+one:
+  id: 1
+  demand_id: 2
+  vm_type_1st: "Windows Server 2003"
+  size_of_vm_1st: "S"
+  number_of_vm_1st: "1"
+  vm_type_2nd: "Windows Server 2008"
+  size_of_vm_2nd: "M"
+  number_of_vm_2nd: "2"
+  vm_type_3rd: "CentOS 5"
+  size_of_vm_3rd: "S"
+  number_of_vm_3rd: "3"
+
+two:
+  id: 2
+  demand_id: 4
+  vm_type_1st: "Windows Server 2008"
+  size_of_vm_1st: "M"
+  number_of_vm_1st: "4"
+  vm_type_2nd: "Windows Server 2003"
+  size_of_vm_2nd: "S"
+  number_of_vm_2nd: "5"
+  vm_type_3rd: "CentOS 6"
+  size_of_vm_3rd: "M"
+  number_of_vm_3rd: "6"
+

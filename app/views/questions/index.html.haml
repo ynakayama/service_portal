@@ -1,0 +1,48 @@
+- title 'アンケート管理 - イノベーション推進部サービスポータル'
+
+.questions-index
+  .container
+    .content
+      .row
+        .span3
+          %h2 アンケート
+          = link_to 'サービス管理に戻る', services_path
+
+        .span9
+          %h2 アンケート一覧
+          %table{:class => 'table table-bordered table-striped'}
+            %thead
+              %tr
+                %th
+                  ID
+                %th
+                  タイトル
+                %th
+                  処理
+                %th
+                  URL
+                %th
+                  状態
+                %th
+                  回答数
+            %tbody
+              - @questions.each do |question|
+                %tr
+                  %td
+                    = link_to question.id, edit_question_path(question)
+                  %td
+                    = question.title
+                  %td
+                    = link_to '詳細', question
+                    = link_to '編集', edit_question_path(question)
+                    = link_to '削除', question, :confirm => '本当に削除しますか', :method => :delete
+                  %td
+                    = link_to '開く', new_answer_path(:question => question.id)
+                  %td
+                    = question.finish ? '終了' : '回答待ち'
+                  %td
+                    = question.answers.length
+
+          = link_to '新規追加', new_question_path, :class => 'btn btn-primary'
+
+          = paginate @questions, :window => 4, :outer_window => 0

@@ -1,0 +1,15 @@
+- title 'サービス管理 - イノベーション推進部サービスポータル'
+
+%section
+  .container
+    .page-header
+      %h2 サービス管理 - 申し込み処理画面
+    .row
+      .span3
+        %b
+          申し込み ID:
+          = @demand.id
+        %div
+          = render 'form'
+      .span9
+        = render 'detail'

@@ -1,0 +1,91 @@
+ja:
+  views:
+    pagination:
+      previous: "<< 前ページ"
+      next: "次ページ >>"
+      first: "最初"
+      last: "最後"
+      truncate: ""
+
+    demand:
+      badge: "社員番号"  #g
+      email: "メールアドレス"  #g
+      name: "名前"  #g
+      badge_b: "社員番号 (上長)"  #g
+      email_b: "メールアドレス (上長)"  #g
+      name_b: "名前 (上長)"  #g
+      project_name: "プロジェクト名"  #g
+      contacts: "連絡先"  #g
+      start_date: "利用開始日時"  #g
+      end_date: "利用終了日時"  #g
+      ip: "利用元 IP アドレス"  #g
+      purpose: "目的"  #g
+      message: "備考/連絡事項"  #g
+
+    service:
+      badge: "社員番号"  #g
+      email: "メールアドレス"  #g
+      name: "名前"  #g
+      badge_b: "社員番号 (上長)"  #g
+      email_b: "メールアドレス (上長)"  #g
+      name_b: "名前 (上長)"  #g
+      project_name: "プロジェクト名"  #g
+      contacts: "連絡先"  #g
+      start_date: "利用開始日時"  #g
+      end_date: "利用終了日時"  #g
+      ip: "利用元 IP アドレス"  #g
+      purpose: "目的"  #g
+      message: "備考/連絡事項"  #g
+
+  activerecord:
+    models:
+      user: "ユーザー"  #g
+      demand: "申し込み"  #g
+
+    attributes:
+      user:
+        email: "メール"  #g
+        encrypted_password: "暗号化されたパスワード"  #g
+        reset_password_token: "パスワードリセットトークン"  #g
+        reset_password_sent_at: "で送信されたパスワードをリセットする"  #g
+        remember_created_at: "で作成した覚えている"  #g
+        current_sign_in_at: "での現在の記号"  #g
+        last_sign_in_at: "での最後の記号"  #g
+        current_sign_in_ip: "IPの現在の記号"  #g
+        last_sign_in_ip: "IPの最後の記号"  #g
+        username: "ユーザー名"  #g
+        thanks: "感謝"  #g
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        current_password: "現在のパスワード"
+
+      demand:
+        badge: "社員番号"  #g
+        email: "メールアドレス"  #g
+        name: "名前"  #g
+        badge_b: "社員番号 (上長)"  #g
+        email_b: "メールアドレス (上長)"  #g
+        name_b: "名前 (上長)"  #g
+        project_name: "プロジェクト名"  #g
+        contacts: "連絡先"  #g
+        start_date: "利用開始日時"  #g
+        end_date: "利用終了日時"  #g
+        ip: "利用元 IP アドレス"  #g
+        purpose: "目的"  #g
+        message: "備考/連絡事項"  #g
+
+      service:
+        badge: "社員番号"  #g
+        email: "メールアドレス"  #g
+        name: "名前"  #g
+        badge_b: "社員番号 (上長)"  #g
+        email_b: "メールアドレス (上長)"  #g
+        name_b: "名前 (上長)"  #g
+        project_name: "プロジェクト名"  #g
+        contacts: "連絡先"  #g
+        start_date: "利用開始日時"  #g
+        end_date: "利用終了日時"  #g
+        ip: "利用元 IP アドレス"  #g
+        purpose: "目的"  #g
+        message: "備考/連絡事項"  #g
+

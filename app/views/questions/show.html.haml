@@ -1,0 +1,22 @@
+- title 'アンケート詳細 - イノベーション推進部サービスポータル'
+
+%section
+  .container
+    .page-header
+      %h2 アンケート - 詳細画面
+    .row
+      .span3
+        %b
+          アンケート ID:
+          = @question.id
+
+        .form-actions
+          %div
+            = link_to '戻る', questions_path, :class => 'btn btn-small'
+            = link_to '編集', edit_question_path(@question), :class => 'btn btn-small btn-primary'
+      .span9
+        = render 'detail'
+        .form-actions
+          - if @question.answers.length > 0
+            = link_to '集計結果を見る', answers_question_path(:question => @question.id), :class => 'btn btn-small'
+          = link_to '回答画面を開く', new_answer_path(:question => @question.id), :class => 'btn btn-small btn-primary'

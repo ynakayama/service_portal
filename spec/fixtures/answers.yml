@@ -1,0 +1,19 @@
+
+one:
+  id: 1
+  badge: '11111'
+  email: 'test@dts.co.jp'
+  name: 'テスト太郎'
+  contacts: '03-1111-2222'
+  question_id: 1
+  answer_1: '回答'
+  answer_2: '回答'
+  answer_3: '回答'
+  answer_4: '回答'
+  answer_5: '回答'
+  answer_6: '回答'
+  answer_7: '回答'
+  answer_8: '回答'
+  answer_9: '回答'
+  answer_10: '回答'
+

@@ -1,0 +1,60 @@
+= form_for @question do |f|
+  -if @question.errors.any?
+    .alert.alert-message.block-message.error
+      %h3= "#{@question.errors.count} 件のエラーが発生したため、処理できませんでした。"
+      %ul
+        - @question.errors.full_messages.each do |msg|
+          %li= msg
+
+  .fieldset
+    .question
+      .row
+        .span3
+          %h2
+            アンケート
+          .field
+            締め切りにする
+            = f.check_box :finish
+        .span9
+          %div{:id => "ac_form_general", :style => "clear:both;width:600px;margin:5px"}
+            %h3
+              %a{:href => "#"} アンケート内容編集
+            .clearfix
+              %label タイトル
+              .input
+                = f.text_field :title
+                .help-inline
+                  例: 本サイト利用に関するアンケート
+              %label 質問 1
+              .input
+                = f.text_field :question_1
+              %label 質問 2
+              .input
+                = f.text_field :question_2
+              %label 質問 3
+              .input
+                = f.text_field :question_3
+              %label 質問 4
+              .input
+                = f.text_field :question_4
+              %label 質問 5
+              .input
+                = f.text_field :question_5
+              %label 質問 6
+              .input
+                = f.text_field :question_6
+              %label 質問 7
+              .input
+                = f.text_field :question_7
+              %label 質問 8
+              .input
+                = f.text_field :question_8
+              %label 質問 9
+              .input
+                = f.text_field :question_9
+              %label 質問 10
+              .input
+                = f.text_field :question_10
+          .form-actions
+            = link_to '戻る', questions_path, :class => 'btn btn-small'
+            = f.submit '保存する', :class => 'btn btn-small btn-primary'

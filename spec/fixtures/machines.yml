@@ -1,0 +1,17 @@
+
+one:
+  id: 1
+  vm_type: 'CentOS 6.0 64bit'
+
+two:
+  id: 2
+  vm_type: 'Windows Server 2008 R2 Standard Edition'
+
+three:
+  id: 3
+  vm_type: 'Red Hat Enterprise Linux 5.5 64bit'
+
+four:
+  id: 4
+  vm_type: 'CentOS 5.x 64bit + Subversion'
+

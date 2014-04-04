@@ -1,0 +1,18 @@
+- title '仮想サーバー管理 - イノベーション推進部サービスポータル'
+
+%section
+  .container
+    .page-header
+      %h2 仮想サーバー管理 - 詳細画面
+    .row
+      .span3
+        %b
+          仮想サーバー ID:
+          = @machine.id
+
+      .span9
+        = render 'detail'
+        .form-actions
+          %div
+            = link_to '戻る', machines_path, :class => 'btn btn-small'
+            = link_to '編集', edit_machine_path(@machine), :class => 'btn btn-small btn-primary'

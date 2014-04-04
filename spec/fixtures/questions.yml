@@ -1,0 +1,16 @@
+
+one:
+  id: 1
+  title: 'テストのアンケート'
+  question_1: '質問'
+  question_2: '質問'
+  question_3: '質問'
+  question_4: '質問'
+  question_5: '質問'
+  question_6: '質問'
+  question_7: '質問'
+  question_8: '質問'
+  question_9: '質問'
+  question_10: '質問'
+  finish: false
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  demand_id: 1
+  title: MyString
+  detail: MyString
+
+two:
+  demand_id: 2
+  title: MyString
+  detail: MyString

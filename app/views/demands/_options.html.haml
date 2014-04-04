@@ -1,0 +1,141 @@
+.vm
+  %h3
+    %a{:href => "#"} レンタルする仮想サーバーの情報 (1 台目)
+  .clearfix
+    .vm_1st
+      %label 仮想サーバーの種類
+      .input
+        <select id="vms_vm_type_1st" name="vms[vm_type_1st]">
+        %option
+          選択してください
+        - @machines.collect do |machine|
+          %option
+            = machine.vm_type
+        %option
+          その他
+        </select>
+        .help-inline
+          選択肢以外の OS をご利用される場合は「その他」 (別途ご相談)
+      %label 仮想サーバーの台数
+      .input
+        <select id="vms_number_of_vm_1st" name="vms[number_of_vm_1st]">
+        %option
+          選択してください
+        %option
+          1
+        %option
+          2
+        %option
+          3
+        %option
+          4
+        %option
+          5
+        </select>
+        .help-inline
+          同じ種類の仮想サーバーを複数台同時に申し込めます
+
+  %h3
+    %a{:href => "#"} レンタルする仮想サーバーの情報 (2 台目)
+  .clearfix
+    .vm_2nd
+      %label 仮想サーバーの種類
+      .input
+        <select id="vms_vm_type_2nd" name="vms[vm_type_2nd]">
+        %option
+          選択してください
+        - @machines.collect do |machine|
+          %option
+            = machine.vm_type
+        %option
+          その他
+        </select>
+      %label 仮想サーバーの台数
+      .input
+        <select id="vms_number_of_vm_2nd" name="vms[number_of_vm_2nd]">
+        %option
+          選択してください
+        %option
+          1
+        %option
+          2
+        %option
+          3
+        %option
+          4
+        %option
+          5
+        </select>
+
+  %h3
+    %a{:href => "#"} レンタルする仮想サーバーの情報 (3 台目)
+  .clearfix
+    .vm_3rd
+      %label 仮想サーバーの種類
+      .input
+        <select id="vms_vm_type_3rd" name="vms[vm_type_3rd]">
+        %option
+          選択してください
+        - @machines.collect do |machine|
+          %option
+            = machine.vm_type
+        %option
+          その他
+        </select>
+      %label 仮想サーバーの台数
+      .input
+        <select id="vms_number_of_vm_3rd" name="vms[number_of_vm_3rd]">
+        %option
+          選択してください
+        %option
+          1
+        %option
+          2
+        %option
+          3
+        %option
+          4
+        %option
+          5
+        </select>
+
+.svn
+  %h3
+    %a{:href => "#"} SVN リポジトリの詳細情報
+  .clearfix
+    %label リポジトリ名称
+    .input
+      <input type="text" id="svns_repo_name" name="svns[repo_name]">
+      .help-inline
+        例: dev_repo1
+    %label SVN ユーザー名 (初期パスワードの希望がある場合は別途連絡)
+    .input
+      <input type="text" id="svns_user1_name" name="svns[user0_name]">
+      .help-inline
+        例: yamada
+    %label 追加 SVN ユーザー名
+    .input
+      <textarea class="xlarge" id="svns[added_users" name="svns[added_users]"></textarea>
+      .help-inline
+        上記以外に追加の SVN ユーザー名がある場合はここに記述 (省略可)
+
+.book
+  %h3
+    %a{:href => "#"} 書籍の詳細
+  .clearfix
+    %label 書籍タイトル
+    .input
+      <input type="text" id="books_title" name="books[title]">
+      .help-inline
+        貸出を希望する書籍のタイトル
+    %label 入荷時の連絡先
+    .input
+      <input type="text" id="books_contact_at_stock" name="books[contact_at_stock]">
+      .help-inline
+        書籍が入荷した時の連絡先 (省略可)
+    %label 連絡の必要な期日
+    .input
+      <input type="text" id="books_date_should_contact" name="books[date_should_contact]">
+      .help-inline
+        この日までに書籍が入荷しなかった場合は連絡を不要とする (省略可)
+

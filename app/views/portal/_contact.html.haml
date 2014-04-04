@@ -1,0 +1,23 @@
+%h3 お問い合わせ
+%p
+  イノベーション推進部に対するご意見ご要望などはこちらへ
+%span{:class => 'label label'}
+  TEL
+%p
+  外線：03-xxxx-xxxx
+%p
+  内線：xxx-xxxx
+%span{:class => 'label label'}
+  E-MAIL
+%p
+  %a{:href => "" }
+    xxxxxx@dts.co.jp
+%span{:class => 'label label'}
+  LINK
+%p
+  - unless Rails.env.development?
+    %a{:href => "/blog/"}
+      %img{:src => '/portal/images/technote_banner.png', :style => 'border:0;'}
+  - else
+    %a{:href => "/blog/"}
+      %img{:src => '/images/technote_banner.png', :style => 'border:0;'}

@@ -1,0 +1,15 @@
+= form_for @demand, :url => {:controller => 'services', :action => 'update'} do |f|
+  -if @demand.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@demand.errors.count, "error")} prohibited this service from being saved:"
+      %ul
+        - @demand.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    処理済みにする
+    = f.check_box :processed
+    .form-actions
+      %div
+        = link_to '戻る', services_path, :class => 'btn btn'
+        = f.submit '保存', :class => 'btn btn-primary'

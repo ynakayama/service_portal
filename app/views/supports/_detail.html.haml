@@ -1,0 +1,17 @@
+%h3
+  サポートメニュー詳細情報
+%table{:class => 'table table-bordered table-striped'}
+  %thead
+    %tr
+      %th{:style => "width: 150px;"} 項目
+      %th 内容
+  %tbody
+    %tr
+      %td サポートメニュー名称
+      %td= @support.course
+    %tr
+      %td 説明
+      %td= @support.text
+    %tr
+      %td サービスタイプ
+      %td= @support.service_type

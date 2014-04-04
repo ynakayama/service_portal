@@ -1,0 +1,52 @@
+%table{:class => 'table table-hover table-striped'}
+  %thead
+    %tr
+      %th{:style => "width:30px; text-align:center;"}
+        \#
+      %th{:style => "width:130px; text-align:center;"}
+        名称
+      %th{:style => "width:250px; text-align:center;"}
+        概要
+      %th{:style => "width:200px; text-align:center;"}
+        詳細／お申し込み
+
+  %tbody
+    %tr
+      %td
+        - unless Rails.env.development?
+          %img{:src => '/portal/images/pyconic/173.png', :style => 'border:0;'}
+        - else
+          %img{:src => '/images/pyconic/173.png', :style => 'border:0;'}
+      %td
+        仮想サーバーレンタル
+      %td
+        すでにご利用中の仮想サーバーについてリソースの変更やシステム起動、エクスポート、スナップショットなどの指示をすることができます。
+      %td
+        %a{:href => "http://library.virtualization.dts.co.jp/blog/wp-content/uploads/downloads/2013/02/server-rental-service.pdf",
+           :target => "_blank",
+           :class => "btn btn"}
+          詳細はこちら
+        - unless Rails.env.development?
+          %a{:class => "btn btn-primary", :href => "/portal/demands/new?service=support_vm" } お申し込み
+        - else
+          %a{:class => "btn btn-primary", :href => "/demands/new?service=support_vm" } お申し込み
+
+    %tr
+      %td
+        - unless Rails.env.development?
+          %img{:src => '/portal/images/pyconic/161.png', :style => 'border:0;'}
+        - else
+          %img{:src => '/images/pyconic/161.png', :style => 'border:0;'}
+      %td
+        SVN ホスティング
+      %td
+        すでにご利用中の SVN ホスティングサーバーについてダンプからの復元やユーザーアカウント追加などの指示をすることができます。
+      %td
+        %a{:class => "btn btn",
+           :target => "_blank",
+           :href => "https://dts.bizca.jp/dts/bbs/bbs/index/10782?display_type=message" } 詳細はこちら
+        - unless Rails.env.development?
+          %a{:class => "btn btn-primary", :href => "/portal/demands/new?service=support_svn" } お申し込み
+        - else
+          %a{:class => "btn btn-primary", :href => "/demands/new?service=support_svn" } お申し込み
+

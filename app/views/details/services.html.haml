@@ -1,0 +1,92 @@
+- title 'サービス詳細ページ - イノベーション推進部サービスポータル'
+
+%header{:id => 'overview', :class => 'jumbotron subhead'}
+  %h1
+    サービス詳細
+  %div.subnav
+    %ul.nav.nav-pills
+      %li
+        %a{:href => '#ci-rental'}
+          CI 環境レンタル
+
+  %section#ci-rental
+  .page-header
+    %h1
+      CI 環境レンタル
+
+  .row
+    .span10
+      %h2
+        CI 環境レンタル - サービス概要
+      %p
+        CI環境レンタルは、CI（継続的インテグレーション：ビルド・テスト・デプロイの自動化）実現の為のサーバーを提供するサービスです。
+        %br
+        CIに必要なソフトウェアが予め準備されているので手軽に使用することができます。プロジェクトにおけるCIの実施にお役立てください。
+
+      %h2
+        イメージ
+      - unless Rails.env.development?
+        %img{:src => '/portal/images/ci.png'}
+      - else
+        %img{:src => '/images/ci.png'}
+
+      %p
+        %li
+          下記表のソフトウェアが予め含まれる仮想サーバーをリモートでご利用できます。
+        %li
+          サーバーやソフトウェアの整備が必要なく、すぐにCI環境を利用することが可能です。
+        %li
+          イノベーション推進部の「ソースコード診断サービス」と連携させることが可能です。
+
+      %table{:class => 'table table-bordered table-striped'}
+        %thead
+          %tr
+            %th{:style => "width:80px; text-align:center;"}
+              ソフトウェア
+            %th{:style => "width:40px; text-align:center;"}
+              バージョン
+            %th{:style => "width:200px; text-align:center;"}
+              機能
+
+        %tbody
+          %tr
+            %td
+              Jenkins
+            %td
+              1.447.2
+            %td
+              継続的インテグレーション
+          %tr
+            %td
+              Subversion
+            %td
+              1.6.11
+            %td
+              ソースコードリポジトリ
+          %tr
+            %td
+              Redmine
+            %td
+              2.0
+            %td
+              バグトラッキングシステム
+
+      %h2
+        ご利用の流れ
+      %p
+        お申し込みフォームに必要事項をご記入の上、「送信する」ボタンを押してください。詳細を確認するため、別途こちらよりご連絡を差し上げます。
+      .form-actions
+        %div
+          - unless Rails.env.development?
+            %a{:class => "btn btn-primary", :href => "/portal/demands/new?service=crossbrowser" } CI 環境レンタルサービスを申し込む
+          - else
+            %a{:class => "btn btn-primary", :href => "/demands/new?service=crossbrowser" } CI 環境レンタルサービスを申し込む
+
+    .span2
+      %h4
+        CI 環境レンタルサービス
+      - unless Rails.env.development?
+        %a{:class => "btn btn-primary", :href => "/portal/demands/new?service=ci" } お申し込み
+      - else
+        %a{:class => "btn btn-primary", :href => "/demands/new?service=ci" } お申し込み
+

@@ -1,0 +1,17 @@
+
+one:
+  id: 1
+  demand_id: 1
+  repo_name: 'sample'
+  user0_name: 'sample_user'
+  user0_pass: 'sample_pass'
+  added_users: 'hoge'
+
+two:
+  id: 2
+  demand_id: 3
+  repo_name: 'sample2'
+  user0_name: 'sample2_user'
+  user0_pass: 'sample2_pass'
+  added_users: 'fuga'
+

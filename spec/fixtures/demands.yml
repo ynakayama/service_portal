@@ -1,0 +1,82 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  id: 1
+  user_id: 1
+  badge: '111111'
+  email: 'ya-nakayama@dts.co.jp'
+  name: 'サンプル太郎'
+  contacts: '03-1111-2222'
+  project_name: 'テスト'
+  badge_b: '222222'
+  email_b: 'tech-sp@dts.co.jp'
+  name_b: 'テスト次郎'
+  start_date: '2012/01/01'
+  end_date: '2012/12/31'
+  ip: '172.16.0.1/16'
+  purpose: 'ふが'
+  message: 'ほげ'
+  service_type: 'svn'
+  processed: true
+
+two:
+  id: 2
+  user_id: 2
+  badge: '444444'
+  email: 'tech-sp@dts.co.jp'
+  name: 'サンプル次郎'
+  contacts: '03-3333-4444'
+  project_name: 'テスト'
+  badge_b: '666666'
+  email_b: 'tech-sp@dts.co.jp'
+  name_b: 'テスト五郎'
+  start_date: '2012/01/01'
+  end_date: '2012/12/31'
+  ip: '172.16.0.1/16'
+  purpose: 'ふが'
+  message: 'ほげ'
+  service_type: 'vm'
+  processed: true
+
+three:
+  id: 3
+  user_id: 3
+  badge: '111111'
+  email: 'ya-nakayama@dts.co.jp'
+  name: 'サンプル太郎'
+  contacts: '03-1111-2222'
+  project_name: 'テスト'
+  badge_b: '222222'
+  email_b: 'tech-sp@dts.co.jp'
+  name_b: 'テスト次郎'
+  start_date: '2012/01/01'
+  end_date: '2012/12/31'
+  ip: '172.16.0.1/16'
+  purpose: 'ふが'
+  message: 'ほげ'
+  service_type: 'svn'
+  processed: true
+
+four:
+  id: 4
+  user_id: 4
+  badge: '444444'
+  email: 'tech-sp@dts.co.jp'
+  name: 'サンプル次郎'
+  contacts: '03-3333-4444'
+  project_name: 'テスト'
+  badge_b: '666666'
+  email_b: 'tech-sp@dts.co.jp'
+  name_b: 'テスト五郎'
+  start_date: '2012/01/01'
+  end_date: '2012/12/31'
+  ip: '172.16.0.1/16'
+  purpose: 'ふが'
+  message: 'ほげ'
+  service_type: 'vm'
+  processed: true
+

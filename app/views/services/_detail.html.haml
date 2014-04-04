@@ -1,0 +1,121 @@
+%h3
+  申し込み詳細
+%table{:class => 'table table-bordered table-striped'}
+  %thead
+    %tr
+      %th{:style => "width: 150px;"} 項目
+      %th 内容
+  %tbody
+    %tr
+      %td 名前
+      %td= @demand.name
+    %tr
+      %td メールアドレス
+      %td= @demand.email
+    %tr
+      %td 社員番号
+      %td= @demand.badge
+    %tr
+      %td 連絡先
+      %td= @demand.contacts
+    %tr
+      %td サービスタイプ
+      %td= @demand.service_type
+
+    - if @demand.service_type == 'vm' or @demand.service_type == 'svn'
+      %tr
+        %td 名前 (上長)
+        %td= @demand.name_b
+      %tr
+        %td メールアドレス (上長)
+        %td= @demand.email_b
+      %tr
+        %td 社員番号 (上長)
+        %td= @demand.badge_b
+      %tr
+        %td 顧客名
+        %td= @demand.customer_name
+      %tr
+        %td プロジェクト名
+        %td= @demand.project_name
+      %tr
+        %td IP アドレス
+        %td= @demand.ip
+      %tr
+        %td 利用開始日時
+        %td= @demand.start_date
+      %tr
+        %td 利用終了日時
+        %td= @demand.end_date
+      %tr
+        %td 目的
+        %td= @demand.purpose
+      %tr
+        %td 備考/連絡事項
+        %td= @demand.message
+
+    - if @demand.service_type == 'vm'
+      - @demand.vms.each do |vm|
+        %tr
+          %td タイプ
+          %td= vm.vm_type_1st
+        %tr
+          %td 個数
+          %td= vm.number_of_vm_1st
+        %tr
+          %td タイプ
+          %td= vm.vm_type_2nd
+        %tr
+          %td 個数
+          %td= vm.number_of_vm_2nd
+        %tr
+          %td タイプ
+          %td= vm.vm_type_3rd
+        %tr
+          %td 個数
+          %td= vm.number_of_vm_3rd
+
+    - if @demand.service_type == 'svn'
+      - @demand.svns.each do |svn|
+        %tr
+          %td リポジトリ名
+          %td= svn.repo_name
+        %tr
+          %td SVN ユーザー名
+          %td= svn.user0_name
+        %tr
+          %td 追加ユーザー
+          %td= svn.added_users
+
+    - if @demand.service_type == 'book'
+      - @demand.books.each do |book|
+        %tr
+          %td タイトル
+          %td= book.title
+        %tr
+          %td 入荷時連絡先
+          %td= book.contact_at_stock
+        %tr
+          %td 連絡必要期日
+          %td= book.date_should_contact
+
+    - if @demand.service_type == 'support_vm' or @demand.service_type == 'support_svn'
+      - @demand.enquiries.each do |enquiry|
+        %tr
+          %td サポートメニュー
+          %td= enquiry.title
+        %tr
+          %td 連絡事項
+          %td= enquiry.detail
+
+    %tr
+      %td 申込日
+      %td= @demand.created_at.strftime "%Y/%m/%d"
+    %tr
+      %td 更新日
+      %td= @demand.updated_at.strftime "%Y/%m/%d"
+    %tr
+      %td 更新者
+      %td
+        - unless @user.nil?
+          = @user.username

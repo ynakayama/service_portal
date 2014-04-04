@@ -1,0 +1,38 @@
+%div{:class=>'navbar navbar-fixed-top'}
+  .navbar-inner
+    .container
+      %a(class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a{:class=>'brand',:href=>'/'}
+        イノベーション推進部
+      %div{:class=>'nav-collapse'}
+        - if user_signed_in?
+          %ul.nav
+            %li
+              = link_to 'サービス管理', services_path
+            %li
+              - if Rails.env.production?
+                %a{:href => "/portal/questions" } アンケート
+              - else
+                %a{:href => "/questions" } アンケート
+            - unless Rails.env.development?
+              %li
+                = link_to 'アクセス解析', "/awstats/awstats.pl"
+              %li
+                = link_to 'リソース監視', "/munin/"
+          %ul.nav.secondary-nav.pull-right
+            -# %li= link_to '設定', edit_user_registration_path
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, :method => :delete
+        - else
+          %ul{:class => 'nav'}
+            %li
+              %a{:href => "/"} ポータルトップ
+            %li
+              %a{:href => "/blog/"} 技術情報共有
+          %ul.nav.secondary-nav.pull-right
+            %li
+              = link_to '管理者ログイン', new_user_session_path
+            -# %li= link_to 'ユーザー登録', new_user_registration_path

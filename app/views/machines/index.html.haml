@@ -1,0 +1,37 @@
+- title '仮想サーバー管理 - イノベーション推進部サービスポータル'
+
+.page-header
+  %h2 仮想サーバー管理 - 一覧画面
+.machines-index
+  .container
+    .content
+      .row
+        .span3
+          = link_to 'サービス管理に戻る', services_path, :class => 'btn btn-small'
+
+        .span9
+          %h2 仮想サーバー一覧
+          %table{:class => 'table table-bordered table-striped'}
+            %thead
+              %tr
+                %th
+                  ID
+                %th
+                  仮想サーバー
+                %th
+                  処理
+            %tbody
+              - @machines.each do |machine|
+                %tr
+                  %td
+                    = link_to machine.id, edit_machine_path(machine)
+                  %td
+                    = machine.vm_type
+                  %td
+                    = link_to '詳細', machine
+                    = link_to '編集', edit_machine_path(machine)
+                    = link_to '削除', machine, :confirm => '本当に削除しますか', :method => :delete
+          .form-actions
+            = link_to '新規追加', new_machine_path, :class => 'btn btn-primary'
+
+          = paginate @machines, :window => 4, :outer_window => 0

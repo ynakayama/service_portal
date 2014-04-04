@@ -1,0 +1,68 @@
+%h3
+  アンケート回答結果
+%table{:class => 'table table-bordered table-striped'}
+  %thead
+    %tr
+      %th{:style => "width: 150px;"} 項目
+      %th 内容
+  %tbody
+    - if @answers.length > 0
+      - @answers.each do |answer|
+        - unless answer.badge.nil?
+          %tr
+            %td 社員番号
+            %td= answer.badge
+        - unless answer.email.nil?
+          %tr
+            %td メールアドレス
+            %td= answer.email
+        - unless answer.name.nil?
+          %tr
+            %td 名前
+            %td= answer.name
+        - unless answer.contacts.nil?
+          %tr
+            %td 連絡先
+            %td= answer.contacts
+        - unless answer.answer_1.nil?
+          %tr
+            %td 回答 1
+            %td= answer.answer_1
+        - unless answer.answer_2.nil?
+          %tr
+            %td 回答 2
+            %td= answer.answer_2
+        - unless answer.answer_3.nil?
+          %tr
+            %td 回答 3
+            %td= answer.answer_3
+        - unless answer.answer_4.nil?
+          %tr
+            %td 回答 4
+            %td= answer.answer_4
+        - unless answer.answer_5.nil?
+          %tr
+            %td 回答 5
+            %td= answer.answer_5
+        - unless answer.answer_6.nil?
+          %tr
+            %td 回答 6
+            %td= answer.answer_6
+        - unless answer.answer_7.nil?
+          %tr
+            %td 回答 7
+            %td= answer.answer_7
+        - unless answer.answer_8.nil?
+          %tr
+            %td 回答 8
+            %td= answer.answer_8
+        - unless answer.answer_9.nil?
+          %tr
+            %td 回答 9
+            %td= answer.answer_9
+        - unless answer.answer_10.nil?
+          %tr
+            %td 回答 10
+            %td= answer.answer_10
+
+= paginate @answers, :window => 10, :outer_window => 0
