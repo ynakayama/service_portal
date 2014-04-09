@@ -1,9 +1,6 @@
 Service Portal
 ==============
 
-See doc/README.ja file.
-(document written in Japanese.)
-
 
 Author
 ------
